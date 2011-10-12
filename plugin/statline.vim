@@ -31,9 +31,12 @@ hi default link User4 Special
 
 " ====== basic info ======
 
+function! StatlineBufCount()
+    return len(filter(range(1,bufnr('$')), 'buflisted(v:val)'))
+endfunction
 
-" buffer number (always shown)
-set statusline=[%n]\ %<
+" buffer number / total buffers (always shown)
+set statusline=[%n-%{StatlineBufCount()}]\ %<
 " filename (tail)
 set statusline+=%1*[%t]%*
 " flags (h:help:[help], w:window:[Preview], m:modified:[+][-], r:readonly:[RO])
@@ -52,6 +55,7 @@ set statusline+=%-14(\ L%l/%L:C%c\ %)
 set statusline+=%P
 
 
+" ====== plugins ======
 
 " Fugitive
 if !exists('g:statline_fugitive')
