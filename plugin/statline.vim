@@ -51,7 +51,7 @@ else
 endif
 
 " flags (h:help:[help], w:window:[Preview], m:modified:[+][-], r:readonly:[RO])
-set statusline+=%2*%h%w%m%r%*
+set statusline+=%2*%h%w%3*%m%r%*
 " filetype
 set statusline+=\ %y
 
