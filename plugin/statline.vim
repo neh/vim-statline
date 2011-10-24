@@ -100,7 +100,7 @@ if !exists('g:statline_fugitive')
     let g:statline_fugitive = 0
 endif
 if g:statline_fugitive
-    set statusline+=%4*%{fugitive#statusline()}%*
+    set statusline+=\ %4*%{fugitive#statusline()}%*
 endif
 
 
